@@ -1,0 +1,1647 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sruthi Kolagati — Social Media Manager</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --navy: #202318;
+        --yellow: #ffdee8;
+        --yellow-2: #ffdee8;
+        --olive: #5f5e09;
+        --white: #fffefb;
+        --text: #202318;
+        --line: #d8d7b0;
+        --marker: "Permanent Marker", cursive;
+        --sans: "DM Sans", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--white);
+        color: var(--text);
+        font-family: var(--sans);
+        overflow-x: hidden;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* =========================================================
+         NAVBAR
+      ========================================================= */
+
+      .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        height: 82px;
+        background: rgba(255, 254, 251, 0.93);
+        backdrop-filter: blur(12px);
+      }
+
+      .nav-inner {
+        max-width: 1140px;
+        height: 100%;
+        margin: auto;
+        padding: 0 34px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+      }
+
+      .logo {
+        font-weight: 700;
+        font-size: 17px;
+      }
+
+      .links {
+        display: flex;
+        gap: 46px;
+        font-size: 14px;
+      }
+
+      .links a:hover {
+        opacity: 0.55;
+      }
+
+      .connect {
+        font-size: 14px;
+        font-weight: 700;
+        border-bottom: 2px solid var(--navy);
+        padding-bottom: 4px;
+      }
+
+      /* =========================================================
+         HAMBURGER MENU
+      ========================================================= */
+
+      .hamburger {
+        display: none;
+        width: 42px;
+        height: 42px;
+        padding: 8px;
+        /* border: 1px solid var(--navy); */
+        border-radius: 6px;
+        background: transparent;
+        cursor: pointer;
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .hamburger span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: var(--navy);
+        transition: all 0.25s ease;
+      }
+
+      .hamburger.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+
+      /* =========================================================
+         HERO
+      ========================================================= */
+
+      .hero {
+        min-height: 680px;
+        padding: 150px 0 92px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-inner {
+        max-width: 1140px;
+        margin: auto;
+        padding: 0 34px;
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        align-items: center;
+        gap: 40px;
+      }
+
+      .hello {
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+
+      .hero h1 {
+        font-size: 66px;
+        line-height: 0.98;
+        letter-spacing: -3px;
+        max-width: 650px;
+        font-weight: 700;
+      }
+
+      .hero-copy {
+        margin-top: 28px;
+        max-width: 560px;
+        font-size: 16px;
+        line-height: 1.7;
+      }
+
+      .resume {
+        display: inline-block;
+        margin-top: 36px;
+        background: var(--yellow);
+        border: 1px solid #797714;
+        padding: 13px 28px;
+        border-radius: 4px;
+        box-shadow: 5px 5px 0 #c2828d;
+      }
+
+      .hero-photo-wrap {
+        position: relative;
+        display: flex;
+        justify-content: center;
+      }
+
+      .hero-photo {
+        width: 545px;
+        height: 545px;
+        border-radius: 35% 52% 55% 50%;
+        object-fit: cover;
+        object-position: 38% 20%;
+        border: 1.5px solid var(--olive);
+        outline: 7px solid var(--white);
+        box-shadow: 0 0 0 1.5px var(--olive);
+        transform: rotate(1deg);
+      }
+
+      .plus {
+        position: absolute;
+        color: var(--yellow);
+        font-size: 35px;
+        right: 28px;
+        top: -28px;
+        font-weight: 700;
+      }
+
+      .dashes {
+        position: absolute;
+        left: 24px;
+        bottom: 22px;
+        color: var(--yellow);
+        font-size: 35px;
+        letter-spacing: -5px;
+        transform: rotate(10deg);
+      }
+
+      .marker-about {
+        position: absolute;
+        right: 9%;
+        bottom: -18px;
+        font: 64px var(--marker);
+        transform: rotate(-3deg);
+      }
+
+      /* =========================================================
+         SECTIONS
+      ========================================================= */
+
+      .section {
+        padding: 95px 0;
+      }
+
+      .yellow {
+        background: var(--yellow-2);
+      }
+
+      .section-inner {
+        max-width: 1140px;
+        margin: auto;
+        padding: 0 34px;
+      }
+
+      .about {
+        position: relative;
+      }
+
+      .about h2 {
+        font-size: 30px;
+        margin-bottom: 18px;
+      }
+
+      .about p {
+        max-width: 1020px;
+        font-size: 17px;
+        line-height: 1.75;
+      }
+
+      /* =========================================================
+         CONTENTS
+      ========================================================= */
+
+      .contents {
+        padding-top: 95px;
+      }
+
+      .marker-title {
+        font: 72px var(--marker);
+        margin-bottom: 45px;
+        line-height: 1;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 54px 64px;
+      }
+
+      .card {
+        min-height: 286px;
+        background: var(--navy);
+        color: white;
+        border-radius: 9px;
+        padding: 28px 15px 24px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card-number {
+        font: 82px var(--marker);
+        color: var(--yellow);
+        line-height: 0.9;
+        margin-bottom: 32px;
+      }
+
+      .card h3 {
+        font-size: 18px;
+        line-height: 1.15;
+        margin-bottom: 12px;
+      }
+
+      .card p {
+        font-size: 13px;
+        line-height: 1.5;
+        color: #f8f8ed;
+        max-width: 230px;
+      }
+
+      /* =========================================================
+         SELECTED WORK
+      ========================================================= */
+
+      .selected-work {
+        background: #ffdee8;
+        padding: 110px 0 130px;
+        overflow: hidden;
+      }
+
+      .selected-work .section-inner {
+        width: min(1400px, calc(100% - 80px));
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0;
+      }
+
+      .selected-work-heading {
+        position: relative;
+        width: min(660px, 100%);
+        margin: 0 0 90px 0;
+        padding: 32px 45px;
+        background: #fffefb;
+        border: 3px solid #5f5e09;
+        border-radius: 18px;
+        box-shadow: 25px 18px 0 #fffefb;
+      }
+
+      .selected-work-heading h2 {
+        color: #5f5e09;
+        font-size: clamp(40px, 5vw, 62px);
+        line-height: 1;
+        text-align: center;
+        font-weight: 700;
+      }
+
+      /* =========================================================
+         PROJECTS LIST
+      ========================================================= */
+
+      .projects-list {
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+        width: 100%;
+      }
+
+      .project-card {
+        width: 100%;
+        background: #fffefb;
+        border: 2px solid #5f5e09;
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: 14px 14px 0 rgba(95, 94, 9, 0.14);
+      }
+
+      .project-cover {
+        width: 100%;
+        height: 680px;
+        overflow: hidden;
+        background: #eee;
+      }
+
+      .project-cover img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: center center;
+      }
+
+      /* =========================================================
+         PROJECT INFO
+      ========================================================= */
+
+      .project-info {
+        width: 100%;
+        padding: 50px 60px;
+        background: #fffefb;
+      }
+
+      .project-title-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 35px;
+      }
+
+      .project-title-row > div {
+        min-width: 0;
+      }
+
+      .project-title-row h3 {
+        color: #202318;
+        font-size: clamp(30px, 3vw, 46px);
+        line-height: 1.05;
+        font-weight: 700;
+      }
+
+      .project-category {
+        flex-shrink: 0;
+        background: #ffdee8;
+        border: 1px solid #5f5e09;
+        border-radius: 100px;
+        padding: 11px 20px;
+        font-size: 13px;
+        font-weight: 600;
+        white-space: nowrap;
+      }
+
+      .project-description {
+        width: min(850px, 100%);
+        margin-top: 22px;
+        font-size: 17px;
+        line-height: 1.75;
+        color: #202318;
+      }
+
+      /* =========================================================
+         PROJECT LINKS
+      ========================================================= */
+
+      .project-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 30px;
+      }
+
+      .project-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 11px 22px;
+        background: #202318;
+        color: #fffefb;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 600;
+        transition: all 0.2s ease;
+      }
+
+      .project-link:hover {
+        background: #5f5e09;
+        transform: translateY(-3px);
+      }
+
+      /* =========================================================
+         CONTENT LINKS
+      ========================================================= */
+
+      .content-links {
+        margin-top: 35px;
+        padding-top: 28px;
+        border-top: 1px solid #ddd8ad;
+      }
+
+      .content-links h4 {
+        font-size: 17px;
+        margin-bottom: 15px;
+      }
+
+      .links-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 20px;
+      }
+
+      .links-list a {
+        color: #5f5e09;
+        text-decoration: underline;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .links-list a:hover {
+        opacity: 0.65;
+      }
+
+      /* =========================================================
+         MEDIA
+      ========================================================= */
+
+      .project-media,
+      .project-videos {
+        width: 100%;
+        padding: 55px 60px;
+      }
+
+      .project-videos {
+        background: #fffefb;
+        border-top: 1px solid rgba(95, 94, 9, 0.15);
+      }
+
+      .media-heading {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 30px;
+      }
+
+      .media-heading span {
+        font-family: var(--marker);
+        font-size: 32px;
+        line-height: 1;
+        color: var(--yellow);
+      }
+
+      .media-heading h4 {
+        font-size: 25px;
+        line-height: 1.1;
+      }
+
+      .media-grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .media-item {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 16px;
+        background: #fff;
+        border: 1px solid rgba(95, 94, 9, 0.25);
+      }
+
+      .media-item img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        transition: transform 0.35s ease;
+      }
+
+      .media-item:hover img {
+        transform: scale(1.05);
+      }
+
+      /* =========================================================
+         VIDEOS
+      ========================================================= */
+
+      .video-grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      .video-item {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        border-radius: 16px;
+        background: #202318;
+      }
+
+      .video-item video {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+      }
+
+      /* =========================================================
+         THANK YOU / CONTACT
+      ========================================================= */
+
+      .thank-you-section {
+        background: var(--navy);
+        color: var(--yellow);
+        padding: 85px 5.2vw 0;
+        min-height: 560px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .thank-you-inner {
+        max-width: 1680px;
+        margin: 0 auto;
+        position: relative;
+        min-height: 470px;
+      }
+
+      .thank-you-small {
+        color: #fffefb;
+        font-size: clamp(24px, 2.2vw, 42px);
+        font-weight: 500;
+        margin-bottom: 36px;
+      }
+
+      .thank-you-title {
+        font-size: clamp(64px, 7.6vw, 145px);
+        line-height: 0.96;
+        letter-spacing: -5px;
+        font-weight: 700;
+        max-width: 1450px;
+      }
+
+      .thank-you-title span {
+        display: block;
+      }
+
+      .thank-you-bye {
+        position: absolute;
+        right: 11%;
+        bottom: 8px;
+        color: #fffefb;
+        font: clamp(55px, 6vw, 110px) var(--marker);
+        transform: rotate(-5deg);
+      }
+
+      .thank-you-dashes {
+        position: absolute;
+        right: 2.5%;
+        bottom: 42px;
+        color: var(--yellow);
+        font-size: clamp(28px, 3vw, 55px);
+        letter-spacing: 3px;
+        transform: rotate(14deg);
+      }
+
+      .contact-strip {
+        background: #fffefb;
+        color: var(--navy);
+        margin: 0 40px 0 0;
+      }
+
+      .contact-strip-inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 35px;
+        width: 100%;
+        padding: 20px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: clamp(15px, 1.35vw, 25px);
+        font-weight: 700;
+        white-space: nowrap;
+      }
+
+      .contact-icon {
+        width: 30px;
+        height: 30px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 27px;
+        flex: 0 0 auto;
+      }
+
+      .contact-link {
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      /* =========================================================
+         TABLET
+      ========================================================= */
+
+      @media (max-width: 1000px) {
+        .selected-work .section-inner {
+          width: min(100% - 50px, 900px);
+        }
+
+        .project-cover {
+          height: 400px;
+        }
+
+        .project-info {
+          padding: 42px 40px;
+        }
+
+        .project-media,
+        .project-videos {
+          padding: 45px 40px;
+        }
+
+        .media-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      /* =========================================================
+         MOBILE NAVBAR
+      ========================================================= */
+
+      @media (max-width: 850px) {
+        .nav {
+          height: 72px;
+        }
+
+        .nav-inner {
+          padding: 0 20px;
+        }
+
+        /* Hide desktop links */
+        .links {
+          display: none;
+        }
+
+        /* Hide desktop connect button */
+        .desktop-connect {
+          display: none;
+        }
+
+        /* Show hamburger */
+        .hamburger {
+          display: flex;
+        }
+
+        /*
+          IMPORTANT:
+          When hamburger gets .active,
+          the navigation links become visible.
+        */
+        .links.active {
+          display: flex;
+          position: absolute;
+          top: 72px;
+          left: 0;
+          right: 0;
+
+          flex-direction: column;
+          align-items: center;
+          gap: 0;
+
+          background: rgba(255, 254, 251, 0.98);
+          backdrop-filter: blur(12px);
+
+          padding: 10px 20px 20px;
+
+          border-top: 1px solid rgba(32, 35, 24, 0.12);
+          box-shadow: 0 10px 25px rgba(32, 35, 24, 0.08);
+
+          animation: menuSlideDown 0.25s ease forwards;
+        }
+
+        .links.active a {
+          width: 100%;
+          text-align: center;
+          padding: 16px 10px;
+          font-size: 16px;
+          font-weight: 600;
+          border-bottom: 1px solid rgba(32, 35, 24, 0.1);
+        }
+
+        .links.active a:last-child {
+          border-bottom: none;
+        }
+
+        .links.active a:hover {
+          opacity: 0.55;
+        }
+
+        @keyframes menuSlideDown {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        /* HERO */
+
+        .hero-inner,
+        .work-top {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .hero h1 {
+          font-size: 48px;
+          letter-spacing: -2px;
+        }
+
+        .hero-copy {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .hero-photo {
+          width: 290px;
+          height: 290px;
+        }
+
+        .marker-about {
+          position: static;
+          text-align: right;
+          font-size: 48px;
+          margin-top: 20px;
+        }
+
+        .cards {
+          grid-template-columns: 1fr 1fr;
+          gap: 22px;
+        }
+
+        .card {
+          min-height: 260px;
+        }
+
+        /* THANK YOU */
+
+        .thank-you-section {
+          padding: 70px 28px 0;
+          min-height: 500px;
+        }
+
+        .thank-you-title {
+          letter-spacing: -2px;
+        }
+
+        .thank-you-bye {
+          right: 8%;
+          bottom: 25px;
+        }
+
+        .thank-you-dashes {
+          right: 1%;
+          bottom: 45px;
+          font-size: 24px;
+        }
+
+        .contact-strip {
+          margin-left: -28px;
+          margin-right: -28px;
+          padding: 22px 28px;
+        }
+
+        .contact-strip-inner {
+          flex-direction: column;
+          gap: 14px;
+        }
+
+        .contact-item {
+          white-space: normal;
+        }
+
+        /* SELECTED WORK */
+
+        .selected-work {
+          padding: 80px 0 90px;
+        }
+
+        .selected-work .section-inner {
+          width: calc(100% - 32px);
+        }
+
+        .selected-work-heading {
+          width: calc(100% - 15px);
+          margin: 0 0 65px 0;
+          padding: 24px 20px;
+          box-shadow: 14px 12px 0 #fffefb;
+        }
+
+        .selected-work-heading h2 {
+          font-size: 38px;
+        }
+
+        .projects-list {
+          gap: 65px;
+        }
+
+        .project-card {
+          border-radius: 22px;
+          box-shadow: 8px 8px 0 rgba(95, 94, 9, 0.13);
+        }
+
+        .project-cover {
+          height: 300px;
+        }
+
+        .project-info {
+          padding: 32px 25px;
+        }
+
+        .project-title-row {
+          flex-direction: column;
+          gap: 18px;
+        }
+
+        .project-title-row h3 {
+          font-size: 30px;
+        }
+
+        .project-category {
+          white-space: normal;
+          width: fit-content;
+          max-width: 100%;
+        }
+
+        .project-description {
+          font-size: 15px;
+          line-height: 1.7;
+        }
+
+        .project-media,
+        .project-videos {
+          padding: 35px 25px;
+        }
+
+        .media-heading {
+          margin-bottom: 22px;
+        }
+
+        .media-heading h4 {
+          font-size: 21px;
+        }
+
+        .media-heading span {
+          font-size: 27px;
+        }
+
+        .media-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 12px;
+        }
+
+        .video-grid {
+          grid-template-columns: 1fr;
+          gap: 18px;
+        }
+      }
+
+      /* =========================================================
+         SMALL MOBILE
+      ========================================================= */
+
+      @media (max-width: 560px) {
+        .hero {
+          padding-top: 125px;
+        }
+
+        .hero h1 {
+          font-size: 40px;
+        }
+
+        .cards {
+          grid-template-columns: 1fr;
+        }
+
+        .marker-title {
+          font-size: 54px;
+        }
+
+        .section {
+          padding: 70px 0;
+        }
+
+        .nav-inner {
+          padding: 0 20px;
+        }
+
+        .selected-work .section-inner {
+          width: calc(100% - 24px);
+        }
+
+        .selected-work-heading {
+          width: calc(100% - 8px);
+          padding: 20px 15px;
+          margin-bottom: 50px;
+        }
+
+        .selected-work-heading h2 {
+          font-size: 31px;
+        }
+
+        .project-cover {
+          height: 250px;
+        }
+
+        .project-info {
+          padding: 28px 20px;
+        }
+
+        .project-title-row h3 {
+          font-size: 27px;
+        }
+
+        .project-links {
+          flex-direction: column;
+        }
+
+        .project-link {
+          width: 100%;
+        }
+
+        .content-links {
+          margin-top: 28px;
+        }
+
+        .links-list {
+          flex-direction: column;
+          gap: 9px;
+        }
+
+        .project-media,
+        .project-videos {
+          padding: 30px 20px;
+        }
+
+        .media-grid {
+          grid-template-columns: 1fr;
+          gap: 15px;
+        }
+
+        .media-item {
+          aspect-ratio: 1 / 1.5;
+        }
+
+        .video-item {
+          aspect-ratio: 16 / 10;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- =========================================================
+         NAVBAR
+    ========================================================= -->
+
+    <nav class="nav">
+      <div class="nav-inner">
+        <div class="logo">Ola Wahid</div>
+
+        <div class="links" id="navLinks">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#selected-work">Work</a>
+          <a href="#contact">Let's connect!</a>
+        </div>
+
+        <a class="connect desktop-connect" href="#contact"> Let's connect! </a>
+
+        <button
+          class="hamburger"
+          id="hamburger"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <main>
+      <!-- =========================================================
+           HERO
+      ========================================================= -->
+
+      <section class="hero" id="home">
+        <div class="hero-inner">
+          <div>
+            <div class="hello">Hello, I’m Ola,</div>
+
+            <h1>
+              Social Media<br />
+              Manager
+            </h1>
+
+            <p class="hero-copy">
+              Social Media & Digital Marketing Specialist A strategic and
+              creative marketer turning ideas into engaging content, strong
+              digital presence, and measurable growth.
+            </p>
+
+            <a class="resume" href="Ola waheed.pdf" target="_blank">Resume</a>
+          </div>
+
+          <div class="hero-photo-wrap">
+            <span class="plus">✚<br />✚</span>
+
+            <img class="hero-photo" src="2.jpeg" alt="Sruthi Kolagati" />
+
+            <span class="dashes">////</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           ABOUT
+      ========================================================= -->
+
+      <section class="section yellow about" id="about">
+        <div class="section-inner">
+          <div class="marker-about">ABOUT ME</div>
+
+          <h2>Hi, My name is Ola Wahid,</h2>
+
+          <p>
+            A marketing professional with a business mindset and a creative
+            side. I turn ideas into strategies, strategies into content, and
+            content into meaningful brand experiences. With a background in
+            operations, client management, and business development, I bring a
+            different perspective to digital marketing — one that connects
+            creativity with real business goals. From building digital
+            strategies and understanding audiences to creating content, running
+            campaigns, and analyzing performance, I’m all about making brands
+            not just visible, but memorable.
+          </p>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           CONTENTS
+      ========================================================= -->
+
+      <section class="section contents">
+        <div class="section-inner">
+          <div class="marker-title">Contents</div>
+
+          <div class="cards">
+            <article class="card">
+              <div class="card-number">1.</div>
+
+              <h3>
+                Digital Marketing <br />
+                Strategy
+              </h3>
+
+              <p>
+                Building data-driven strategies that connect brand goals with
+                audience needs and business objectives.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-number">2.</div>
+
+              <h3>
+                Social Media <br />
+                & Content
+              </h3>
+
+              <p>
+                Planning and creating engaging content aligned with brand
+                identity, audience behavior, and platform trends.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-number">3.</div>
+
+              <h3>
+                Paid Advertising <br />
+                & Media Buying
+              </h3>
+
+              <p>
+                Planning, launching, and optimizing paid campaigns to reach the
+                right audience and drive measurable results.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-number">4.</div>
+
+              <h3>
+                Audience <br />
+                & Market Analysis
+              </h3>
+
+              <p>
+                Understanding target audiences, buyer personas, competitors,
+                platforms, and market trends to guide marketing decisions.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-number">5.</div>
+
+              <h3>
+                SEO <br />
+                & Email Marketing
+              </h3>
+
+              <p>
+                Strengthening digital presence through SEO and email marketing
+                while supporting audience reach and customer engagement.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-number">6.</div>
+
+              <h3>
+                Performance <br />
+                & Analytics
+              </h3>
+
+              <p>
+                Tracking KPIs, analyzing campaign performance, and turning
+                data-driven insights into actionable improvements.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           SELECTED WORK
+      ========================================================= -->
+
+      <section class="selected-work" id="selected-work">
+        <div class="section-inner">
+          <div class="selected-work-heading">
+            <h2>Some of my work</h2>
+          </div>
+
+          <div class="projects-list">
+            <!-- ================= PROJECT 1 ================= -->
+
+            <article class="project-card">
+              <div class="project-cover">
+                <img src="artistico.jpeg" alt="Artistico Furniture" />
+              </div>
+
+              <div class="project-info">
+                <div class="project-title-row">
+                  <div>
+                    <h3>Artistico Furniture</h3>
+                  </div>
+
+                  <span class="project-category"> Digital Marketer </span>
+                </div>
+
+                <p class="project-description">
+                  Managed the overall digital marketing function, covering paid
+                  advertising, media buying, content creation, creative
+                  direction and photoshoot production, and SEO. Conducted target
+                  audience, buyer persona, competitor, and platform analysis,
+                  alongside SWOT and PESTEL analyses, to develop data-driven
+                  digital strategies. Monitored and analyzed campaign and
+                  overall digital performance to identify opportunities for
+                  optimization and growth.
+                </p>
+
+                <div class="project-links">
+                  <a
+                    href="https://www.instagram.com/artistico.furniture?igsi=MTNtaTVzNG1nOWg1"
+                    target="_blank"
+                    class="project-link"
+                  >
+                    Instagram ↗
+                  </a>
+                </div>
+
+                <div class="content-links">
+                  <h4>Content Links</h4>
+
+                  <div class="links-list">
+                    <a
+                      href="https://www.instagram.com/reel/DZ-FJEtici6/?igsi=MTZoa3owYXZ1YXR4NA=="
+                      target="_blank"
+                    >
+                      Link 01 ↗
+                    </a>
+
+                    <a
+                      href="https://www.instagram.com/reel/DW6MmVZj5to/?igsi=MWVuN3lxZm1uZmJh"
+                      target="_blank"
+                    >
+                      Link 02 ↗
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-media">
+                <div class="media-heading">
+                  <span>01</span>
+                  <h4>Visuals & Content</h4>
+                </div>
+
+                <div class="media-grid">
+                  <div class="media-item">
+                    <img src="artist ins 1.jpeg" alt="Artistico content" />
+                  </div>
+
+                  <div class="media-item">
+                    <img src="artist ins 2.jpeg" alt="Artistico content" />
+                  </div>
+
+                  <div class="media-item">
+                    <img src="artist ins 3.jpeg" alt="Artistico content" />
+                  </div>
+
+                  <div class="media-item">
+                    <img src="artist ins 4.jpeg" alt="Artistico content" />
+                  </div>
+
+                  <div class="media-item">
+                    <img src="artist ins 5.jpeg" alt="Artistico content" />
+                  </div>
+
+                  <div class="media-item">
+                    <img src="artist ins 6.jpeg" alt="Artistico content" />
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- ================= PROJECT 2 ================= -->
+
+            <article class="project-card">
+              <div class="project-cover">
+                <img src="flment.jpeg" alt="FTMNT" />
+              </div>
+
+              <div class="project-info">
+                <div class="project-title-row">
+                  <div>
+                    <h3>FTMNT</h3>
+                  </div>
+
+                  <span class="project-category"> Digital Marketer </span>
+                </div>
+
+                <p class="project-description">
+                  Managed the overall digital marketing activities, including
+                  paid advertising, media buying, content creation, and
+                  photoshoot production. Conducted target audience, buyer
+                  persona, competitor, and platform analysis, supported by SWOT
+                  and PESTEL analyses, to inform content and digital marketing
+                  strategies. Regularly evaluated digital performance to
+                  optimize campaigns and improve the brand’s online presence.
+                </p>
+
+                <div class="project-links">
+                  <a
+                    href="https://www.instagram.com/ftmnt.eg?igsi=eDBzYTh2bDVsMDM="
+                    target="_blank"
+                    class="project-link"
+                  >
+                    Instagram ↗
+                  </a>
+                </div>
+              </div>
+
+              <div class="project-media">
+                <div class="media-heading">
+                  <span>01</span>
+                  <h4>Visuals & Content</h4>
+                </div>
+
+                <div class="media-grid">
+                  <div class="media-item">
+                    <img src="ftm 1.jpeg" alt="" />
+                  </div>
+
+                  <div class="media-item">
+                    <img src="ftm 2.jpeg" alt="" />
+                  </div>
+
+                  <div class="media-item">
+                    <img src="ftm 3.jpeg" alt="" />
+                  </div>
+
+                  <div class="media-item">
+                    <img src="ftm 4.jpeg" alt="" />
+                  </div>
+
+                  <div class="media-item">
+                    <img src="ftm 5.jpeg" alt="" />
+                  </div>
+
+                  <div class="media-item">
+                    <img src="ftm 6.jpeg" alt="" />
+                  </div>
+
+                  <div class="media-item">
+                    <img src="ftm 7.jpeg" alt="" />
+                  </div>
+
+                  <div class="media-item">
+                    <img src="ftm 8.jpeg" alt="" />
+                  </div>
+
+                  <div class="media-item">
+                    <img src="ftm 9.jpeg" alt="" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-videos">
+                <div class="media-heading">
+                  <span>02</span>
+                  <h4>Videos & Reels</h4>
+                </div>
+
+                <div class="video-grid">
+                  <div class="video-item">
+                    <video controls>
+                      <source src="IMG_2477.MOV" type="video/mp4" />
+                    </video>
+                  </div>
+
+                  <div class="video-item">
+                    <video controls>
+                      <source src="IMG_2479.MOV" type="video/mp4" />
+                    </video>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- ================= PROJECT 3 ================= -->
+
+            <article class="project-card">
+              <div class="project-cover">
+                <img src="synovia.jpeg" alt="SYNOVIA" />
+              </div>
+
+              <div class="project-info">
+                <div class="project-title-row">
+                  <div>
+                    <h3>SYNOVIA</h3>
+                  </div>
+
+                  <span class="project-category">
+                    General Manager & Digital Marketer
+                  </span>
+                </div>
+
+                <p class="project-description">
+                  Led the business as General Manager while managing the
+                  complete digital marketing function, including paid
+                  advertising, media buying, content creation, creative
+                  direction and photoshoot production, and SEO. Developed
+                  strategic insights through target audience, buyer persona,
+                  competitor, and platform analysis, as well as SWOT and PESTEL
+                  analyses. Analyzed overall digital performance to drive
+                  optimization, strengthen the brand’s market positioning, and
+                  support sustainable business growth.
+                </p>
+
+                <div class="project-links">
+                  <a
+                    href="https://www.instagram.com/synovia_2026?igsi=MTA1bzRxcmRqOWdrNA=="
+                    target="_blank"
+                    class="project-link"
+                  >
+                    Instagram ↗
+                  </a>
+                </div>
+
+                <div class="content-links">
+                  <h4>Content Links</h4>
+
+                  <div class="links-list">
+                    <a href="https://linktr.ee/Synovia2026" target="_blank">
+                      Link 01 ↗
+                    </a>
+
+                    <a
+                      href="https://canva.link/a4cgy1i4z37yi7t"
+                      target="_blank"
+                    >
+                      Competitor Analysis ↗
+                    </a>
+
+                    <a
+                      href="https://canva.link/stp7d13uv6kvo8k"
+                      target="_blank"
+                    >
+                      Content Calendar ↗
+                    </a>
+
+                    <a
+                      href="https://canva.link/t250638zb4nexgx"
+                      target="_blank"
+                    >
+                      Agenda ↗
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-media">
+                <div class="media-heading">
+                  <span>01</span>
+                  <h4>Visuals & Content</h4>
+                </div>
+
+                <div class="media-grid">
+                  <div class="media-item">
+                    <img src="shampo.jpeg" alt="" />
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- ================= PROJECT 4 ================= -->
+
+            <article class="project-card">
+              <div class="project-cover">
+                <img src="4.jpeg" alt="Project 4" />
+              </div>
+
+              <div class="project-info">
+                <div class="project-title-row">
+                  <div>
+                    <h3>DEPI</h3>
+                  </div>
+
+                  <span class="project-category"> Digital Marketer </span>
+                </div>
+
+                <p class="project-description">
+                  Digital Marketing Intern | DEPI × MCIT 6-Month Internship
+                  Gained hands-on experience in digital marketing and social
+                  media through projects developed for [Elghamry auto], [KY
+                  trade mark], [el ghamry tours], [Scarf Home], [ Fayez Sobeh
+                  coffee ], [ Farida], While the work cannot be showcased
+                  publicly due to confidentiality requirements, the experience
+                  provided practical exposure to real-world marketing projects
+                  and professional client environments.
+                </p>
+
+                <div class="content-links">
+                  <h4>Content Links</h4>
+
+                  <div class="links-list">
+                    <a
+                      href="https://canva.link/tdl2rupz6ckixrn"
+                      target="_blank"
+                    >
+                      Graduation Project ↗
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-media">
+                <div class="media-heading">
+                  <span>01</span>
+                  <h4>Visuals & Content</h4>
+                </div>
+
+                <div class="media-grid">
+                  <div class="media-item">
+                    <img src="4 2.jpeg" alt="" />
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- =========================================================
+         CONTACT
+    ========================================================= -->
+
+    <section class="thank-you-section" id="contact">
+      <div class="thank-you-inner">
+        <div class="thank-you-small">Well, that’s the end!</div>
+
+        <h2 class="thank-you-title">
+          <span>Thanks for taking the</span>
+          <span>time to review my</span>
+          <span>portfolio!</span>
+        </h2>
+
+        <div class="thank-you-bye">BYE</div>
+
+        <div class="thank-you-dashes">/////</div>
+      </div>
+
+      <div class="contact-strip">
+        <div class="contact-strip-inner">
+          <a class="contact-item" href="tel:+201122245274">
+            <span class="contact-icon">☎</span>
+            <span class="contact-link"> 01122245274 </span>
+          </a>
+
+          <a class="contact-item" href="mailto:olawahed3@gmail.com">
+            <span class="contact-icon">✉</span>
+            <span class="contact-link"> olawahed3@gmail.com </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         HAMBURGER JAVASCRIPT
+    ========================================================= -->
+
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("navLinks");
+
+      hamburger.addEventListener("click", () => {
+        const isOpen = hamburger.classList.toggle("active");
+
+        navLinks.classList.toggle("active");
+
+        hamburger.setAttribute("aria-expanded", isOpen);
+      });
+
+      // Close menu when clicking any navigation link
+      navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          navLinks.classList.remove("active");
+          hamburger.setAttribute("aria-expanded", "false");
+        });
+      });
+    </script>
+  </body>
+</html>
